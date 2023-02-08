@@ -1,8 +1,14 @@
 ---
--  tasks:
-    - name: Stop-start-restart Tomcat
+
+- name: start-stop-reload
+  hosts: '{{ HOST }}'
+  become: yes
+
+  tasks:
+    - name: Stop Tomcat
       ansible.builtin.service:
         name: tomcat.service
         state: '{{state}}'
         enabled: true
+
 
