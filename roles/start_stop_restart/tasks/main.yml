@@ -1,0 +1,8 @@
+---
+-  tasks:
+    - name: Stop-start-restart Tomcat
+      ansible.builtin.service:
+        name: tomcat.service
+        state: '{{state}}'
+        enabled: true
+

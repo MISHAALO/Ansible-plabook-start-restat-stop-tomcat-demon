@@ -1,0 +1,24 @@
+---
+# Connection
+ansible_ssh_private_key_file: ~/.ssh/id_rsa
+init_user: user
+ansible_user: user
+
+# Application
+app_name: name
+releases_dir: "/d01/attach/Release/SPRINT-{{ sprint_version }}"
+root_dir: /d01
+tomcat_dir: "{{ root_dir }}/tomcat"
+jasperreport_dir: reportTemplates
+http_port: 8080
+tomcat_port: 8080
+properties_file: ***.properties
+
+attaches:
+- path: /d01/attach
+  uri: attach:/d01/attach
+
+# Users
+users:
+- 'user'
+
